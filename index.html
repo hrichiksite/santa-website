@@ -9,13 +9,63 @@
     <link rel="stylesheet" href="dist/css/style.css">
 	<script src="https://unpkg.com/animejs@2.2.0/anime.min.js"></script>
 	<script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-<link rel="icon" href="/src/images/santa.png" type="image/png">
+
 <meta property="og:title" content="Santa's Website">
 <meta property="og:description" content="Book Your E-gift here and get it on your email">
 <meta property="og:image" content="https://getsanta.ga/src/images/og.png">
 <meta property="og:url" content="https://getsanta.ga">
+<style>
+	/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
 </head>
 <body class="is-boxed has-animations">
+	<!-- The Modal -->
+<div id="myModal" class="modal">
+
+	<!-- Modal content -->
+	<div class="modal-content">
+	  <span class="close">&times;</span>
+	  <p id="modaltext">Check your inbox, Santa has sent the mail :)</p>
+	</div>
+  
+  </div>
     <div class="body-wrap boxed-container">
         <header class="site-header">
 			<div class="header-shape header-shape-1">
@@ -44,7 +94,7 @@
                 <div class="site-header-inner">
                     <div class="brand header-brand">
                         <h1 class="m-0">
-                            <a href="#">
+                            <a href="">
 								
                             </a>
                         </h1>
@@ -62,10 +112,10 @@
 	                        <p class="hero-paragraph">This year was full of chalenges and so it is better to give you all e-gifts at your email address, give your email address below and I will send you my wishes there, Merry Christmas </p>
 							<div class="hero-form field field-grouped">
 								<div class="control control-expanded">
-									<input class="input" type="email" name="email" placeholder="Your best email&hellip;">
+									<input class="input" id="santamail" type="email" name="email" placeholder="Your best email&hellip;">
 								</div>
 								<div class="control">
-									<a class="button button-primary button-block" href="#">Claim Your Gift</a>
+									<a class="button button-primary button-block" id="buttonmail" onclick="get()">Claim Your Gift</a>
 								</div>
 							</div>
 						</div>
@@ -254,10 +304,10 @@
                         </div>
                         <div class="footer-form newsletter-form field field-grouped">
                             <div class="control control-expanded">
-                                <input class="input" type="email" name="email" placeholder="Your best email&hellip;">
+                                <input class="input" type="email" id="santamail2" name="email" placeholder="Your best email&hellip;">
                             </div>
                             <div class="control">
-                                <a class="button button-primary button-block button-shadow" href="#">Claim Your Gift </a>
+                                <a class="button button-primary button-block button-shadow" id="buttonmail" onclick="get2()">Claim Your Gift </a>
                             </div>
                         </div>
                     </div>
@@ -282,7 +332,7 @@
                         </li>
                     </ul>
 					<div class="footer-copyright">&copy; 2020 Santa, all rights reserved</div>
-					<small> Made By <a href="https://twitter.com/hrichikm">Hrichik Mazumder</a>. This is a fun project, all data colected is stored in sendgrid's servers and I will delete it after the the Christmas eve ends. <b>And For Your relief, you will get a email with Christmas wishes :)</b></small>
+					<small> Made By <a href="https://twitter.com/hrichikm">Hrichik Mazumder</a>. This is a fun project, all data colected is stored in mailchimp servers and I will delete it after the the Christmas eve ends. <b>And For Your relief, you will get a email with Christmas wishes :)</b></small>
                 </div>
             </div>
         </footer>
